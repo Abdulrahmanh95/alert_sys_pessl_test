@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "3c2eacbb-9e81-454a-b9db-9f618d40ea71",
+		"name": "Pessl Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "A test request for home page"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Alert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": 1,\r\n    \"user_email\": \"abd.alrahmanh.1995@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/alert",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"alert"
+					]
+				},
+				"description": "Create a new alert for a specific user by his email.\r\n\r\ntype: 1 (Batter level drops below x mV) | 2 (Relative humidity level exceeds x%) | 3 (Air temperature drops below x degrees)"
+			},
+			"response": []
+		},
+		{
+			"name": "Store Station Payloads",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/xampp/htdocs/php/slim/pessl-test/resources/payloads"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/station/payloads/:userId",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"station",
+						"payloads",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Store station payloads and process each individual record to send alerts."
+			},
+			"response": [
+				{
+					"name": "200 (Success)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/xampp/htdocs/php/slim/pessl-test/resources/payloads"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/station/payloads/:userId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"station",
+								"payloads",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 23 Aug 2020 20:01:49 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.4"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Home Test Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
