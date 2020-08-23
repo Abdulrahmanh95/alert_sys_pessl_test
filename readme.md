@@ -8,6 +8,7 @@
 - Create a mysql database called `pessl_test` with username `root` and without password.
 - Run the migrations inside `database/migrations` to set up database tables.
 - Import `docs/Pessl Test_Abdulrahman_Hashem.postman_collection.json` in postman.
+- Go to `src/handler/BaseEmailHandler.php` and put your SMTP credentials for gmail to act as a sender.
 - Run `Store Stations Payload` request and pass the payloads file to it.
 
 **NOTE**: The criteria used not to disturb the user with too many alerts is by checking 
