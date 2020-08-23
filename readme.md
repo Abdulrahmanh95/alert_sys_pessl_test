@@ -1,4 +1,4 @@
-### Setup
+## Setup
 
 - `git clone https://github.com/Abdulrahmanh95/alert_sys_pessl_test.git`
 - `composer install`
